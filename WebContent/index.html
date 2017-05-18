@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="app" >
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>facebook</title>
+	<link href="img/fb.ico" rel="shortcut icon">
+	<link rel="stylesheet" href="normalcss/normalize.css"/>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/css2.css">
+	<script src="_angularjsSource/angular.js"></script>
+	<script src="_angularjsSource/uirouter.js"></script>
+	<script src="_angular/module/module.js"></script>
+	<script src="_angular/controller/HomeCTRL.js"></script>
+<body ng-controller="homeCTRL"> 	  
+	<div class="container">
+		<div class="row" style="background-color:#4267b2; color:white;">
+			<div ng-include="'template/header/header.html'"></div> <!-- include header -->			
+		</div>
+		<div class="row">			 
+			<div class="content col-md-12">
+				<div class="main-content col-md-5 col-md-offset-2"> 
+					<div ng-include="'template/body/taobaiviet.html'"></div><!-- include tạo bài viết -->
+					<div ng-include="'template/body/noiDungDaViet.html'"></div> <!-- include nội dung đã đăng -->
+				</div>
+			</div>			
+		</div>
+	</div>
+	
+	<div>
+		<input type="text" ng-model="trangthai">
+		
+		
+	</div>
+ 	<div  ng-include="'template/popup/vietbai.html'"></div>
+	<script src="jquery/jquery-2.1.3.js"></script>
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script> 
+	<script>
+		$(document).ready(function(){
+			$('.ui-button').click(function(){
+				console.log('tuyệt')
+				});
+			 
+		});
+	</script>
+	<script src="_js/_ui_modal.js"></script>
+</body>
+</html>

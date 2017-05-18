@@ -1,0 +1,97 @@
+<div ng-repeat="e in information_post">
+						<div ng-repeat=" i in e._status |orderBy : '-_time' track by $index">
+						  
+							<div class="row">						
+								<div class="panel-group">
+									 <div class="panel panel-default"> 
+									 	<div class="panel-body fix-botton"> 
+									 		
+									 			<div class="row" > <!-- phần nội dung đã đăng -->
+									 				<div class="col-md-1">
+										 				<a href="#"><img src="img/boy-512.png" class="img-responsive"/> </a>
+										 			</div> <!-- kết thúc Image logo -->
+										 			<div class="col-md-10 col-md-offset-1">
+										 				 <div class="row">
+										 				 	<a href="#">
+										 				 		<label> {{i._name}}</label>
+										 				 	</a>
+										 				 </div> <!-- kết thúc logo -->
+										 				 <div class="row">
+										 				 	<div class="col-md-3">
+										 				 		<label class="thoigiandangbai">{{i._time | date :'dd/MM/yyyy'}}</label>
+										 				 	</div>
+										 				 	<div class="col-md-9">
+										 				 		<div class="dropdown">
+											 				 		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span> </a>
+											 				 		<ul class="dropdown-menu">
+											 				 			<li><a href="#">cộng đồng</a><li>
+											 				 			<li><a href="#">Bạn bè</a><li>
+											 				 			<li><a href="#">một mình</a><li> 
+											 				 		</ul>
+											 				 	</div>								 				 		 	
+										 				 	</div>								 				 
+										 				 </div> 
+										 			</div> <!-- kết thúc state -->
+									 			</div><!-- kết nội dung đã đăng -->
+									 		 	
+									 		 	<div class="row">
+									 		 		<div class="col-md-12">
+									 		 			<div class="noidung-status">
+									 		 				 {{i._status_content}}
+										 		 		</div>
+										 		 		<div class="noidung-status-img collapse">
+										 		 			nơi chứa ảnh nếu có 
+									 		 			</div> 
+									 		 		</div>
+									 		 	</div> <!-- kết thúc trạng thái  -->
+									 		 	
+									 		 	<div class="row ui-like-command-share">
+									 		 		<div class="col-md-10 col-md-offset-0"> 
+									 		 			<a href="javascript:void(0);" class="btn" ng-click="like(i)">
+									 		 				<span class="glyphicon glyphicon-thumbs-up"></span> <label>like {{i._like}}</label>
+									 		 			</a> 
+									 		 			<a href="#" class="btn" ng-click="like(i)">
+									 		 				<span  class="glyphicon glyphicon glyphicon-comment"></span> <label>Command</label>
+									 		 			</a>
+									 		 			<a href="#" class="btn">
+									 		 				<span class="glyphicon glyphicon glyphicon-share-alt"></span> <label>Share</label>
+									 		 			</a>
+									 		 			 
+									 		 		</div>
+									 		 	</div>
+									 		 	
+									 	</div> <!-- kết thúc panel-body -->
+									 	<div class="panel-footer" style="text-align:left;">
+									 		<div class="row status-icon">
+									 			<div class="fix-left-15">
+									 				<span class="glyphicon glyphicon-thumbs-up"> </span><label  class="fix-left-15">1</label> 
+									 			</div> 
+									 		</div> <!-- kết thúc icon -->
+									 		<div class="row status-Command ">
+									 			<div class="fix-left-15">
+									 				<div class="row">
+									 					<div class="col-md-1">
+									 						<img src="img/boy-512.png" class="img-responsive">
+									 					</div> 
+									 					<div class="col-md-10 col-md-offset-1">
+									 						<div class="row">
+									 							nội dụng command
+									 						</div>
+									 						<div class="row status-command">
+									 							<span class="glyphicon glyphicon-thumbs-up"> </span><label  class="fix-left-15">1</label> 
+									 						</div>
+									 						
+									 					
+									 					</div>
+									 				</div>
+									 			</div> 
+									 		</div> <!-- kết thúc status-Command -->
+									 		
+									 	</div><!-- kết thúc panel-footer -->
+									 </div><!-- kết thúc panel --> 
+								</div><!-- kết thúc panel-group -->
+							</div> 
+						
+						</div> 
+					</div>	
+				
