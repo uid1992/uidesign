@@ -1,0 +1,127 @@
+ 
+	<div ng-repeat=" _status in statusJoinUser |orderBy : '-_time' track by $index">
+	 	<div class="row"> 
+	 	 
+	 	   
+				 <div class="panel panel-default"> 
+				 	<div class="panel-body fix-botton"> 
+				 			<div class="row" > <!-- phần nội dung đã đăng -->
+				 				<div class="col-md-2">
+					 				<a href="#"><img ng-src="img/{{_status._avatar}}" class="images400"/> </a>
+					 				 
+					 				
+					 			</div> <!-- kết thúc Image logo -->
+					 			<div class="col-md-10">
+					 				 <div class="row">
+					 				 
+					 				 	<a href="#">
+					 				 		<label> {{_status._name}}</label>
+					 				 		
+					 				 	</a>
+					 				 	
+					 				 	<div class="dropdown close">
+					 				 		<a class="dropdown toggle" style="padding-right: 15px;" data-toggle="dropdown">
+												<span class="caret"></span></a>
+					 				 		<ul class="dropdown-menu">
+					 				 			<li><a ng-click="xoaStatus($index)">Xóa</a></li>
+					 				 			<li><a ng-click="sua($index)">Sửa</a></li>
+					 				 			
+					 				 		</ul>
+					 				 	</div>
+					 				 </div> <!-- kết thúc logo -->
+					 				 <div class="row">
+					 				 	<div class="col-md-3">
+					 				 		<label class="thoigiandangbai">{{_status._time | date :'dd/MM/yyyy'}}</label>
+					 				 	</div>
+					 				 	<div class="col-md-9">
+					 				 		<div class="dropdown">
+						 				 		<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><span class="{{_status._icon}}"></span><span class="caret"></span> </a>
+						 				 		<ul class="dropdown-menu">
+						 				 			<div  ng-repeat="_trangThaiXem in _trangThaiXem">
+							 							<li>				 	
+									 						<a ui-sref="_whoViewState({icon:'{{_trangThaiXem._id}}'})" style=" padding-left: 20px; " > <span class="{{_trangThaiXem._icon}}" ng-click=""> </span> <b style="color:#000;">{{_trangThaiXem._name}}</b> 
+									 						</a>
+									 						
+								 						</li>
+									 				</div> 
+						 				 		</ul>
+						 				 	</div>								 				 		 	
+					 				 	</div>								 				 
+					 				 </div> 
+					 			</div> <!-- kết thúc state -->
+				 			</div><!-- kết nội dung đã đăng -->
+				 		 	
+				 		 	<div class="row">
+				 		 		<div class="col-md-12">
+				 		 			<div class="noidung-status">
+				 		 				 {{_status._status}} 
+					 		 		</div>
+					 		 		<div class="noidung-status-img" > 
+					 		 			<img ng-src="{{_status._img}}" style="width:100%;margin-top:10px;
+					 		 			box-shadow: 0 0 0 1.5px rgba(0, 0, 0, .1) inset, 0 1px 1px rgba(0, 0, 0, .05); 					 		 			
+					 		 			">
+				 		 			</div> 
+				 		 		</div>
+				 		 	</div> <!-- kết thúc trạng thái  -->
+				 		 	
+				 		 	<div class="row ui-like-command-share">
+				 		 		<div class="col-md-10 col-md-offset-0"> 
+				 		 			<a href="javascript:void(0);" class="btn" ng-click="like(_status)">
+				 		 				<span class="glyphicon glyphicon-thumbs-up"></span> <label>like {{_status._like}}</label>
+				 		 			</a> 
+				 		 			<a href="#" class="btn" >
+				 		 				<span  class="glyphicon glyphicon glyphicon-comment"></span> <label>Command</label>
+				 		 			</a>
+				 		 			<a href="#" class="btn" ng-click="share(_status)">
+				 		 				<span class="glyphicon glyphicon glyphicon-share-alt"></span> <label>Share {{_status._share}}</label>
+				 		 			</a>
+				 		 			 
+				 		 		</div>
+				 		 	</div>
+				 		 	
+				 	</div> <!-- kết thúc panel-body -->
+				 	<div class="panel-footer" style="text-align:left;">
+				 		<div class="row status-icon">
+				 			<div class="fix-left-15 paddingLeft">
+				 				<span class="glyphicon glyphicon-thumbs-up"> </span><label  class="fix-left-15">1</label> 
+				 			</div> 
+				 		</div> <!-- kết thúc icon -->
+				 		<div class="row status-Command">
+				 			<div class="fix-left-15">
+				 				<div class="row"  ng-repeat="_comment in _status._comment">
+				 					<div class="col-md-2">
+				 						<img ng-src="img/{{_status._avatar}}" class="paddingLeft img-responsive"> 
+				 					</div> 
+				 					<div class="col-md-10">
+				 						<div class="row">
+				 							<b>{{_comment._name}}</b> {{_comment._comment}}
+				 						</div>
+				 						<div class="row status-command">
+				 							<div class="paddingLeft">
+				 								<span class="glyphicon glyphicon-thumbs-up paddingLeft"> </span><label  class="fix-left-15">1</label> <a> trả lời </a> 
+				 							</div> 
+				 							<div> 
+				 								<a> <img ng-src="img/{{_status._avatar}}" class="img-comment pull-left"></a>
+				 								<input type="text"  class="form-control inputComment " ng-keypress="($event.charCode==13)?myFunction():return" placeholder="Viết bình luận"> 
+				 							</div>
+				 						</div>
+				 					</div>
+				 				</div>
+				 			</div> 
+				 		</div> <!-- kết thúc status-Command -->
+				 		
+				 		<div class="row">
+				 			<div>
+				 				<div class="col-md-2"><img  ng-src="img/{{_status._avatar}}" class="img-responsive"> </div>
+				 				<div class="col-md-10">
+				 					<input type="text" class="form-control" ng-keypress="($event.charCode==13)?myFunction():return" placeholder="Viết bình luận">
+				 				</div>
+				 			</div> 
+				 		</div>
+				 	</div><!-- kết thúc panel-footer -->
+				 </div><!-- kết thúc panel --> 
+		 
+		</div> 
+	
+	</div> 
+				

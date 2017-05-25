@@ -1,0 +1,197 @@
+
+
+<div class="">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-7"> <!-- start left & main --> 
+				<div class="col-md-12"> 
+					<div class="col-md-4"> <!-- start left-->
+						<div ng-include="'_template/_body/_left.html'"></div>
+					</div> <!-- end left-->
+					
+					<div class="col-md-8"><!-- start main-->
+						<div class="row"> 
+							<div ng-include="'_template/_body/taobaiviet.html'">
+								
+							</div>
+						</div>
+						
+						<div class="row">
+							<div ng-include="'_template/_body/noiDungDaViet.html'"></div>
+						</div>
+						
+						
+						
+						
+					</div> <!-- end main-->	
+				</div>
+			</div> <!-- end left & main -->
+			<div class="col-md-5"> <!-- start right & friendList--> 
+				<div class="col-md-12"> 
+					<div class="col-md-4"> <!-- start right-->
+						
+							
+					</div> <!-- end right-->
+						
+					<div class="col-md-8"><!-- start friendList-->
+						<div ng-include="'_template/_body/_friendList.html'"></div>
+						
+						
+					</div> <!-- end friendList-->	
+				</div>
+			</div> <!-- end right & friendList-->
+			
+			
+		</div>
+	</div>
+</div>
+
+ 
+
+
+<div class="homeCtrl"> <!-- mở đầu phần đăng  popup --> 
+					 <div class="modal-popup">
+				 		<div class="modal" tabindex="-1">
+				 			<div class="modal-dialog" style="width:500px;">
+				 				<div class="row">
+										<div class="panel-group">
+											 <div class="panel panel-default">
+											 	<div class="panel-heading">
+											 		<div class="row">
+											 		<div class="col-md-8"> 
+										 				<span><a href="#"><span class="glyphicon glyphicon-pencil"></span> <label>Tạo bài viết</label> </a></span>							 			 
+										 				<span><a href="#"><span class="glyphicon glyphicon-camera"></span> <label> album ảnh, video</label></a></span>							 				  							 		 
+											 		</div><!-- kết thúc tạo bài viết, albumảnh video  -->
+											 		<div class="col-md-4">
+											 			<span><a href="#"><span class="glyphicon glyphicon-facetime-video"></span>  <label>video</label></a></span>
+											 			<div class="close">&times;</div>
+											 		</div><!-- kết thúc tạo video trực tiếp  -->
+										 		</div>
+											 		 
+											 	</div> <!-- kết thúc panel-heading -->
+											 	<div class="panel-body">
+											 		 
+											 			<div class="col-md-2">
+											 				<a href="#"><img src="img/boy-512.png" class="images400"/></a>
+											 			</div>
+											 			<div class="col-md-10">
+											 				<div class="div-taobaiviet" >
+											 					 
+											 					<textarea ng-model="trangthai" placeholder="trangthai" rows="5" style="width:100%;"> </textarea>
+											 				</div> 
+											 			</div>
+											 		 
+											 	</div> <!-- kết thúc panel-body -->
+											 	<div class="panel-footer" style="height:50px;">
+											 		<div class="col-md-6 col-md-offset-6 fix-sapdocao" style="height:30px;">
+												 			<div class="row">
+													 			<div class="col-md-8">
+													 				<div class="dropdown padding7">
+														 				<a href="#" class="dropdown-toggle padding10" data-toggle="dropdown"><span class="glyphicon glyphicon-globe"></span> Mọi Người <span class="caret"></span></a>
+														 				
+														 				<ul class="dropdown-menu"style="min-width:250px;left:-60px;">
+														 					<li><span style="text-align:center;width:100%;padding-left:3px;"> ai là người sẽ nhìn thấy nội dung này?</span></li>
+														 					<!-- <div style="width:100%;"> -->
+														 						<div  ng-repeat="_trangThaiXem in _trangThaiXem">
+														 							<li>
+											 	
+																 						<a ui-sref="_whoViewState({icon:'{{_trangThaiXem._id}}'})" style=" padding-left: 20px; " >
+																 							<span class="{{_trangThaiXem._icon}}"> </span>
+																 							<b style="color:#000;padding-left:15px;">{{_trangThaiXem._name}}</b> 
+																 						</a>
+															 						</li>
+														 						</div>
+															 					 
+														 					<!-- </div> -->
+														 				</ul> 
+														 			</div>
+													 			</div>
+													 			<div class="col-md-4">						 		 
+													 				<button type="button" ng-click="postStatus()" class="ui-button btn btn-primary pull-right"><span class="glyphicon glyphicon-send"></span> Đăng </button>
+												 			</div>
+											 			</div>
+											 		</div>  
+											 	</div><!-- kết thúc panel-footer -->
+											 </div><!-- kết thúc panel -->
+										</div><!-- kết thúc panel-group -->
+									</div> <!-- nơi đăng trạng thái -->
+				 			</div>
+				 		</div>
+			 	</div>
+			 	 </div> <!--  kết thúc phần popup -->
+	
+
+
+
+<div class="homeCtrl"> <!-- mở đầu phần sửa  popup --> 
+					 <div class="modal-popup">
+				 		<div class="modal" tabindex="-1" id="modal">
+				 			<div class="modal-dialog" style="width:500px;">
+				 				<div class="row">
+										<div class="panel-group">
+											 <div class="panel panel-default">
+											 	<div class="panel-heading">
+											 		<div class="row">
+											 		<div class="col-md-8"> 
+										 				<span><a href="#"><span class="glyphicon glyphicon-pencil"></span> <label>Tạo bài viết</label> </a></span>							 			 
+										 				<span><a href="#"><span class="glyphicon glyphicon-camera"></span> <label> album ảnh, video</label></a></span>							 				  							 		 
+											 		</div><!-- kết thúc tạo bài viết, albumảnh video  -->
+											 		<div class="col-md-4">
+											 			<span><a href="#"><span class="glyphicon glyphicon-facetime-video"></span>  <label>video</label></a></span>
+											 			<div class="close">&times;</div>
+											 		</div><!-- kết thúc tạo video trực tiếp  -->
+										 		</div>
+											 		 
+											 	</div> <!-- kết thúc panel-heading -->
+											 	<div class="panel-body">
+											 		 
+											 			<div class="col-md-2">
+											 				<a href="#"><img src="img/boy-512.png" class="images400"/></a>
+											 			</div>
+											 			<div class="col-md-10">
+											 				<div class="div-taobaiviet" >
+											 					 
+											 					<textarea ng-model="trangthai" placeholder="content" rows="5" style="width:100%;"> </textarea>
+											 				</div> 
+											 			</div>
+											 		 
+											 	</div> <!-- kết thúc panel-body -->
+											 	<div class="panel-footer" style="height:50px;">
+											 		<div class="col-md-6 col-md-offset-6 fix-sapdocao" style="height:30px;">
+												 			<div class="row">
+													 			<div class="col-md-8">
+													 				<div class="dropdown padding7">
+														 				<a href="#" class="dropdown-toggle padding10" data-toggle="dropdown"><span class="glyphicon glyphicon-globe"></span> Mọi Người <span class="caret"></span></a>
+														 				
+														 				<ul class="dropdown-menu"style="min-width:250px;left:-60px;">
+														 					<li><span style="text-align:center;width:100%;padding-left:3px;"> ai là người sẽ nhìn thấy nội dung này?</span></li>
+														 					<!-- <div style="width:100%;"> -->
+														 						<div  ng-repeat="who in whoCanViewStatus">
+														 							<li>
+											 	
+																 						<a ui-sref="_whoViewState({icon:'{{who._whoViewIcon}}',who:who._whoViewState})" style=" padding-left: 20px; " > <span class="{{who._whoViewIcon}}"> </span> <b>{{who._whoViewState}}</b> 
+																 						</a>
+															 						</li>
+														 						</div>
+															 					 
+														 					<!-- </div> -->
+														 				</ul> 
+														 			</div>
+													 			</div>
+													 			<div class="col-md-4">						 		 
+													 				<button type="button" ng-click="luu()" class="ui-button btn btn-primary pull-right"><span class="glyphicon glyphicon-send"></span> Sửa </button>
+												 			</div>
+											 			</div>
+											 		</div>  
+											 	</div><!-- kết thúc panel-footer -->
+											 </div><!-- kết thúc panel -->
+										</div><!-- kết thúc panel-group -->
+									</div> <!-- nơi đăng trạng thái -->
+				 			</div>
+				 		</div>
+			 	</div>
+			 	 </div> <!--  kết thúc phần popup -->
+
+
+
+	
